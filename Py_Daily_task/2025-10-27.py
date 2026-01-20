@@ -1,0 +1,48 @@
+# Question 1
+arr = [1, 2, 3, 4, 5, 6, 54, 28, 19, 30, 99, 33, 23, 40, 17, 27, 16]
+count = 0
+for i in arr:
+    if i % 2 == 0:
+        count += 1
+print("Even:",count)
+print("Odd:", len(arr)-count)
+
+# Question 2
+def find_indeies(lst,tar_val):
+    fst_index=None
+    lst_index=None
+    for i in range(len(lst)):
+        if lst[i]==tar_val:
+            fst_index=i
+            break
+    for i in range(len(lst)-1,-1,-1):
+        if lst[i]==tar_val:
+            lst_index=i
+            break
+    return {'first_index':fst_index,'last_index':lst_index}
+
+print(find_indeies([5, 2, 3, 5, 7, 5, 8],5))
+
+
+# After 4.15 class pratice
+"""
+Samples for type hints
+"""
+#Introducing type hints
+import typing
+def add(x, y):
+    """
+    name: add
+    accepts two integers and returns their
+    returns: integer
+    """
+
+    x = int(x)
+    y = int(y)
+    return (x + y)
+
+def greeting(name:str) -> str:
+    return f"Hello {name}"
+print(add(10, 5))
+print(greeting("Sachin"))
+print(greeting("Aravindhan"))
